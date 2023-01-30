@@ -1,0 +1,80 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| monica             |
+| mysql              |
+| performance_schema |
+| student            |
+| test               |
++--------------------+
+6 rows in set (0.02 sec)
+
+mysql> use monica;
+Database changed
+mysql> create database varta mamey dur
+    -> create database varta mamey dur;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mamey dur
+create database varta mamey dur' at line 1
+mysql> create database varta mamey dur;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mamey dur' at line 1
+mysql> create database varta_mamey_dur
+    -> create database varta_mamey_dur;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create database varta_mamey_dur' at line 2
+mysql> create database varta_mamey_dur;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| monica             |
+| mysql              |
+| performance_schema |
+| student            |
+| test               |
+| varta_mamey_dur    |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use varta_mamey_dur;
+Database changed
+mysql> create table student(
+    -> sno int,name varchar(100),age int,marks int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc student;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| sno   | int(11)      | YES  |     | NULL    |       |
+| name  | varchar(100) | YES  |     | NULL    |       |
+| age   | int(11)      | YES  |     | NULL    |       |
+| marks | int(11)      | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> insert into student values(1,'reaven',17,99);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student values(2,'maara',14,79);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(3,'yuvan',18,100);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(4,'erine',16,100);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from student;
++------+--------+------+-------+
+| sno  | name   | age  | marks |
++------+--------+------+-------+
+|    1 | reaven |   17 |    99 |
+|    2 | maara  |   14 |    79 |
+|    3 | yuvan  |   18 |   100 |
+|    4 | erine  |   16 |   100 |
++------+--------+------+-------+
+4 rows in set (0.00 sec)
